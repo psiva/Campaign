@@ -1,3 +1,6 @@
+let HDWalletProvider = require("truffle-hdwallet-provider");
+let mnemonic = "off logic local wheel arctic cute want hour candy evil often food";
+
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
   // to customize your Truffle configuration!

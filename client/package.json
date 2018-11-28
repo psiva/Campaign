@@ -13,6 +13,20 @@
     "next": "^6.1.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "web3": "^1.0.0-beta.34"
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.83.0",
+    "swarm-js": "^0.1.39",
+    "uport-connect": "^1.0.2",
+    "web3": "^1.0.0-beta.36",
+    "web3-core": "^1.0.0-beta.36",
+    "web3-core-helpers": "^1.0.0-beta.36",
+    "web3-core-method": "^1.0.0-beta.36",
+    "web3-core-requestmanager": "^1.0.0-beta.36",
+    "web3-core-subscriptions": "^1.0.0-beta.36",
+    "web3-eth-accounts": "^1.0.0-beta.36",
+    "web3-eth-contract": "^1.0.0-beta.36",
+    "web3-eth-iban": "^1.0.0-beta.36",
+    "web3-eth-personal": "^1.0.0-beta.36",
+    "web3-net": "^1.0.0-beta.36"
   }
 }

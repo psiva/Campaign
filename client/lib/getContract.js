@@ -1,14 +1,6 @@
-const getContractInstance = async (web3, contractDefinition) => {
-  // get network ID and the deployed address
-  const networkId = await web3.eth.net.getId()
-  const deployedAddress = contractDefinition.networks[networkId].address
+import web3 from './getWeb3';
+import CampaignFactory from './contracts/CampaignFactory.json';
 
-  // create the instance
-  const instance = new web3.eth.Contract(
-    contractDefinition.abi,
-    deployedAddress
-  )
-  return instance
-}
+const getContractInstance = new web3.eth.Contract(CampaignFactory.abi,'0xd945a0af03b900de846c8000f31bf5a92cf40d91');
 
 export default getContractInstance
