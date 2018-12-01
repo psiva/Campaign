@@ -9,6 +9,7 @@ export default () => {
             <Menu.Menu position="right">
                 <Menu.Item> Campaigns</Menu.Item>
                 <Menu.Item > + </Menu.Item>
+                <Menu.Item > Sign in using uPort </Menu.Item>
             </Menu.Menu>
         </Menu>
     );
