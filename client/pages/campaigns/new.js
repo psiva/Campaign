@@ -3,6 +3,7 @@ import Layout from "../../components/layout";
 import { Form, Button, Input, Message } from "semantic-ui-react";
 import getContract from '../../lib/getContract';
 import getWeb3 from '../../lib/getWeb3';
+import {Router} from '../../routes';
 class CampaignNew extends Component {
   state = {
     minimumContribution: '',
@@ -19,8 +20,8 @@ class CampaignNew extends Component {
         await getContract.methods
                .createCampaign(this.state.minimumContribution)
                .send({from:accounts[0]});
+        Router.pushRoute('/');
      } catch(err){
-        console.log(err);
         this.setState({errorMessage:err.message});
      }
      this.setState({loading:false});

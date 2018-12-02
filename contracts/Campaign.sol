@@ -70,4 +70,18 @@ contract Campaign{
         address receiver = request.recipient;
         receiver.transfer(request.value);
     }
+
+    function getSummary() public view returns(uint,uint,uint,uint,address) {
+        return(
+            minimumContribution,
+            address(this).balance,
+            requests.length,
+            approversCount,
+            owner
+        );
+    }
+
+    function getRequestCount() public view returns(uint){
+        return requests.length;
+    }
 }
