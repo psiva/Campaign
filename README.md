@@ -11,8 +11,8 @@ by the owner to release the funds.
 
 ## Installation
 
-1. Clone the repo\
-2. `npm install` from the cloned folder to install dependencies for smart contracts\ 
-3. `cd client`\
-4. `npm install` to install the dependencies for web app\
-5. `npm run dev` to run the server\
+1. Clone the repo
+2. `npm install` from the cloned folder to install dependencies for smart contracts
+3. `cd client`
+4. `npm install` to install the dependencies for web app
+5. `npm run dev` to run the server
