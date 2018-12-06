@@ -1,0 +1,8 @@
+{
+    "name": "Campaign",
+    "version": "1.0.0",
+    "dependencies": {
+        "openzeppelin-solidity": "^2.0.0",
+        "truffle-hdwallet-provider": "0.0.6"
+    }
+}
