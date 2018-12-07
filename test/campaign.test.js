@@ -10,7 +10,7 @@ contract("Campaign", function(accounts){
 
     beforeEach(async () =>{
         factory = await CampaignFactory.deployed();
-        await factory.createCampaign('100',{from:accounts[0]});
+        await factory.createCampaign('100',{from:accounts[0]},'');
         [campaignAddress] = await factory.getDeployedCampaigns({from:accounts[0]});
         campaign = Campaign.at(campaignAddress);
     })

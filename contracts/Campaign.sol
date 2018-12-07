@@ -22,6 +22,7 @@ contract Campaign is Pausable{
     }
     
     address public owner;
+    string public imageHash;
     uint public minimumContribution;
     uint public approversCount;
     mapping(address=>bool) public approvers;
@@ -30,14 +31,23 @@ contract Campaign is Pausable{
     event RequestCreated(string description,uint value, address recipient);
     event RequestFinalized(address recipient,uint value);
 
+    /**
+    @dev Modifier to check if the sender is the owner of the contract
+     */
     modifier onlyOwner{
         require(owner == msg.sender);
         _;
     }
     
-    constructor(uint minimumAmount, address creator) public {
+    /**
+    @notice Constructor
+    @param minimumAmount Minimum Contribution required for this campaign
+    @param creator Owner of the campaign
+     */
+    constructor(uint minimumAmount, address creator, string imgHash) public {
         owner = creator;
         minimumContribution = minimumAmount;
+        imageHash = imgHash;
     }
     
     /**
@@ -107,13 +117,14 @@ contract Campaign is Pausable{
     @notice Publishes the summary of the campaign
     @return Minimum Contribution, Balance, Number of requests, Number of approvers and Owner's address
      */
-    function getSummary() public view returns(uint,uint,uint,uint,address) {
+    function getSummary() public view returns(uint,uint,uint,uint,address,string) {
         return(
             minimumContribution,
             address(this).balance,
             requests.length,
             approversCount,
-            owner
+            owner,
+            imageHash
         );
     }
 

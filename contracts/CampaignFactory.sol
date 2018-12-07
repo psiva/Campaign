@@ -6,8 +6,8 @@ contract CampaignFactory{
     
     address[] public campaigns;
     
-    function createCampaign(uint minimumContribution) public {
-        address newCampaign = new Campaign(minimumContribution,msg.sender);
+    function createCampaign(uint minimumContribution,string imgHash) public {
+        address newCampaign = new Campaign(minimumContribution,msg.sender,imgHash);
         campaigns.push(newCampaign);
     }
     

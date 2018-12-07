@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 import Layout from '../../components/layout';
 import Campaign from '../../lib/campaign';
-import { Card,Grid, GridColumn, Button } from 'semantic-ui-react';
+import { Card,Grid, GridColumn, Button, Image } from 'semantic-ui-react';
 import web3 from '../../lib/getWeb3';
 import ContributeForm from '../../components/contributeForm';
 import {Link} from '../../routes';
@@ -10,13 +10,15 @@ class CampaignDetails extends Component{
 
     static async getInitialProps(props){
         const campaign = Campaign(props.query.address);
-        const summary = await campaign.methods.getSummary().call()
+        const summary = await campaign.methods.getSummary().call();
+        console.log(summary);
         return {
             minimumContribution:summary[0],
             balance:summary[1],
             requestCount:summary[2],
             approversCount:summary[3],
             owner:summary[4],
+            imgHash:summary[5],
             address:props.query.address
         };
     }
@@ -68,8 +70,11 @@ class CampaignDetails extends Component{
         return <Card.Group items={items} />;
     }
     render() {
+        const imgSrc = `https://ipfs.io/ipfs/${this.props.imgHash}`;
+        console.log(imgSrc);
         return <Layout>
                     <h3>Campaign Details</h3>
+                    <Image src ={imgSrc} size='large' fluid></Image>
                     <Grid>
                         <Grid.Row>
                         <Grid.Column width={10}>
