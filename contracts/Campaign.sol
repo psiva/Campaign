@@ -83,7 +83,8 @@ contract Campaign is Pausable{
     }
     
     /**
-    @notice Allows a contributor to the campaign approve a request created by the owner
+    @notice Allows a contributor to the campaign approve a request created by the owner if not already approved
+            by the contributor
     @param index Index of the request in the request array that contributor wants to approve
      */
     function approveRequest(uint index) public {

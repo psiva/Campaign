@@ -11,7 +11,6 @@ class CampaignDetails extends Component{
     static async getInitialProps(props){
         const campaign = Campaign(props.query.address);
         const summary = await campaign.methods.getSummary().call();
-        console.log(summary);
         return {
             minimumContribution:summary[0],
             balance:summary[1],
@@ -74,7 +73,7 @@ class CampaignDetails extends Component{
         console.log(imgSrc);
         return <Layout>
                     <h3>Campaign Details</h3>
-                    <Image src ={imgSrc} size='large' fluid></Image>
+                    <Image src ={imgSrc} fluid></Image>
                     <Grid>
                         <Grid.Row>
                         <Grid.Column width={10}>

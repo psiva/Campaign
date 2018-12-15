@@ -2,6 +2,7 @@
     "name": "Campaign",
     "version": "1.0.0",
     "dependencies": {
+        "dotenv": "^6.2.0",
         "openzeppelin-solidity": "^2.0.0",
         "truffle-hdwallet-provider": "0.0.6"
     }

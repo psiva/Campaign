@@ -9,6 +9,7 @@ export default (props) => {
         <Container>
             <Head>
                 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css"></link>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"></link>
             </Head>
             <Header />
             {props.children}

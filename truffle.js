@@ -1,5 +1,7 @@
+require('dotenv').config();
+
 let HDWalletProvider = require("truffle-hdwallet-provider");
-let mnemonic = "off logic local wheel arctic cute want hour candy evil often food";
+let mnemonic = process.env.MNEMONIC;
 
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
@@ -8,7 +10,6 @@ module.exports = {
     development: {
       host: "localhost",
       port: 8545,
-      gas: 2000000,
       network_id: "*" // Match any network id
     },
     rinkeby:{

@@ -12,9 +12,7 @@ class CampaignNew extends Component {
     loading:false,
     buffer:''
   };
-
   
-
    onSubmit = async(event) =>{
      event.preventDefault();
      this.setState({loading:true,errorMessage:''});
