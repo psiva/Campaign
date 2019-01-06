@@ -22,8 +22,8 @@ contract Campaign is Pausable{
     }
     
     address public owner;
-    string public imageHash;
-    uint public minimumContribution;
+    string private imageHash;
+    uint private minimumContribution;
     uint public approversCount;
     mapping(address=>bool) public approvers;
     Request[] public requests;
@@ -40,9 +40,10 @@ contract Campaign is Pausable{
     }
     
     /**
-    @notice Constructor
-    @param minimumAmount Minimum Contribution required for this campaign
-    @param creator Owner of the campaign
+    @notice Contructor to create a new Campaign
+    @param minimumAmount Minimim Contribution required for this campaign
+    @param creator Owner of the Campaign
+    @param imgHash IPFS hash of the banner image
      */
     constructor(uint minimumAmount, address creator, string imgHash) public {
         owner = creator;
@@ -106,7 +107,7 @@ contract Campaign is Pausable{
     function finalizeRequest(uint index) 
         public onlyOwner whenNotPaused{
         Request storage request = requests[index];
-        require(request.approvalCount>(approversCount/2));
+        require(request.approvalCount>(approversCount.div(2)));
         require(!request.isComplete);
         request.isComplete = true;
         address receiver = request.recipient;
