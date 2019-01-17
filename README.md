@@ -11,7 +11,7 @@ by the owner to release the funds.
 
 ## Pre-requisites
 
-Ensure you have Truffle , Ganache and NPM installed on the machine. I have tested this with Truffle version 4.1.14 and Google Chrome with Metamask extension installed in it.
+Ensure you have Truffle(v4) , Ganache , nodejs(V10+) and NPM installed on the machine. I have tested this with Truffle version 4.1.14 and Google Chrome with Metamask extension installed in it. 
 
 ## Installation
 

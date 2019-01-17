@@ -3,5 +3,6 @@ module.exports = {
     // This allows the app to refer to files through our symlink
     config.resolve.symlinks = false
     return config
-  }
+  },
+  distDir:'dist'
 }

@@ -139,4 +139,11 @@ contract Campaign is Pausable{
     function getRequestCount() public view returns(uint){
         return requests.length;
     }
+
+    /**
+    @dev This method provides an ability to destroy and remove the contract from blockchain
+     */
+    function kill() onlyOwner{
+        selfdestruct(owner);
+    }
 }
