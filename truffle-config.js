@@ -1,11 +1,13 @@
+require('dotenv').config();
+
+let HDWalletProvider = require("truffle-hdwallet-provider");
+let mnemonic = process.env.MNEMONIC;
+
 module.exports = {
-  // See <http://truffleframework.com/docs/advanced/configuration>
-  // to customize your Truffle configuration!
   networks: {
     development: {
       host: "localhost",
       port: 8545,
-      gas: 2000000,
       network_id: "*" // Match any network id
     },
     rinkeby:{
@@ -15,4 +17,4 @@ module.exports = {
     network_id:3
     }
   }
-};
+}
