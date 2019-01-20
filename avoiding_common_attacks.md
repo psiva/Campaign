@@ -23,5 +23,10 @@ I have used [SafeMath][https://github.com/OpenZeppelin/openzeppelin-solidity/blo
 Avoided using delegatecall and ensured the libraries I used do not carry this risk to prevent hacks similar Parity Multi-Sig wallet hack.
 
 **Contract Ownership**
+Used a modifier onlyOwner for defining Contract Ownership. OpenZeppelin's Ownable contract is the alternative.
+
+**Loops/DoS attack**
+Used mappings instead of arrays to avoid infinite loops and prevent DoS attacks
+
 
 

@@ -1,6 +1,6 @@
-Following are some of the design pattern decisions that were made during implementation of CrowdCoin
+Following are some of the design pattern decisions that were made during implementation of KroudCoin
 
-As part of CrowdCoin, we needed to have any user initiate creating a new Campaign. This translates to having individual Campaign contracts deployed for each campaign. In order to simplify this deployment process and have the creator of the Campaign bear the costs of deployment, have decided to use **Factory Design pattern**.
+As part of KroudCoin, we needed to have any user initiate creating a new Campaign. This translates to having individual Campaign contracts deployed for each campaign. In order to simplify this deployment process and have the creator of the Campaign bear the costs of deployment, have decided to use **Factory Design pattern**.
 
 Created a CampaignFactory contract which will create Campaign contracts on demand.
 
@@ -28,4 +28,5 @@ Implemented **Access restrictions** by using modifiers to restrict access to con
 
 Implemented **Pull vs Push Payment** pattern. Owner creates a request to pull payments from the balance and is released after multi-sig consensus is reached.
 
-Used require statements where required to fail early and fail loud.
+Used require statements in various methods as required to **fail early and fail loud**.
+
