@@ -83,4 +83,16 @@ contract("Campaign", function(accounts){
         balance = parseFloat(balance);
         assert(balance > 100);
     });
+
+      /**
+     * Test if Campaign Summary is returned correctly
+     */
+    it('returns campaign summary', async()=>{    
+        const summary = await campaign.getSummary();
+        let balance = await web3.eth.getBalance(accounts[9]);
+        balance = web3.fromWei(balance,'ether');
+        balance = parseFloat(balance);
+        assert('100',summary[0]);
+        assert(balance>100);
+    });
 })
