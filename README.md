@@ -15,7 +15,7 @@ Ensure you have Truffle(v4) , Ganache , nodejs(V10+) and NPM installed on the ma
 
 If you have truffle 5.0, please use truffle v 4.1.14
 
-`npm uninstall truffle`
+`npm uninstall truffle` \
 `npm install -g truffle@4.1.14`
 
 I used solidity v0.4.24. Please ensure your solc is v0.4.24
@@ -24,15 +24,17 @@ I used solidity v0.4.24. Please ensure your solc is v0.4.24
 
 1. Clone the repo
 2. Open up Ganache (desktop/command line) and configure it to hostname = 127.0.0.1 and port 8545 (default unless changed) to get your local blockchain up and running.
-3. Create a `.env` file in the Camaign folder/directory and create a key value pair with `MNEMONIC = Replace this text with your mnemonic from Metamask/Ganache`. Update 'Replace this text with your mnemonic from Metamask/Ganache' with the mnemonic from your local installation of Ganache.
-2. `npm install` from the cloned folder to install dependencies for smart contracts
-3. `cd client`
-4. `npm install` to install the dependencies for web app
-5. `npm run dev` to run the server
+3. Create a `.env` file in the Campaign folder/directory and create a key value pair with `MNEMONIC = Replace this text with your mnemonic from Metamask/Ganache`. Update 'Replace this text with your mnemonic from Metamask/Ganache' with the mnemonic from your local installation of Ganache.
+4. `npm install` from the cloned folder to install dependencies for smart contracts
+5. `cd client`
+6. `npm install` to install the dependencies for web app
+7. `npm run dev` to run the server
+8. Navigate to `http://localhost:3000` to interact with the web app.
+9. The address in the metamask that is used for creating a campaign is the owner for that campaign.
 
 
 ## Code Structure
 
-`contracts` folder contains all the logic
-`client` folder contains the front end code
+`contracts` folder contains all the logic \
+`client` folder contains the front end code \
 `design_pattern_decisions.md` and ` avoiding_common_attacks.md` are in the root folder.
