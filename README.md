@@ -24,13 +24,15 @@ I used solidity v0.4.24. Please ensure your solc is v0.4.24
 
 1. Clone the repo
 2. Open up Ganache (desktop/command line) and configure it to hostname = 127.0.0.1 and port 8545 (default unless changed) to get your local blockchain up and running.
-3. Create a `.env` file in the Campaign folder/directory and create a key value pair with `MNEMONIC = Replace this text with your mnemonic from Metamask/Ganache`. Update 'Replace this text with your mnemonic from Metamask/Ganache' with the mnemonic from your local installation of Ganache.
-4. `npm install` from the cloned folder to install dependencies for smart contracts
-5. `cd client`
-6. `npm install` to install the dependencies for web app
-7. `npm run dev` to run the server
-8. Navigate to `http://localhost:3000` to interact with the web app.
-9. The address in the metamask that is used for creating a campaign is the owner for that campaign.
+3. Update the MNEMONIC in the `.env` file with the mnemonic from your local blockchain created by ganache
+4. Add the ganache accounts to Metamask by importing the private keys.
+5. `npm install` from the cloned folder to install dependencies for smart contracts
+6. `cd client`
+7. `npm install` to install the dependencies for web app
+8. `npm run dev` to run the server
+9. Navigate to `http://localhost:3000` to interact with the web app.
+
+The address in the metamask that is used for creating a campaign is the owner for that campaign.
 
 
 ## Code Structure
