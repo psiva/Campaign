@@ -22,19 +22,39 @@ I used solidity v0.4.24. Please ensure your solc is v0.4.24
 
 ## Installation
 
-1. Clone the repo `git clone https://github.com/psiva/Campaign.git`
-2. `npm install` from the cloned folder to install dependencies for smart contracts
-3. `cd client`
-4. `npm install` to install the dependencies for web app
-5. Open up Ganache (desktop/command line) and configure it to hostname = 127.0.0.1 and port 8545 (default unless changed) to get your local blockchain up and running.
-6. Execute `cd ..` and then`truffle test` and other `truffle` commands from within the Campaign directory
-7. Update the MNEMONIC in the `.env` file with the mnemonic from the metamask. This is required if you wish to deploy the contract to Rinkeby testnet.
-8. Add the ganache accounts to Metamask by importing the private keys.
-9. `npm run dev` to run the server
-10. Navigate to `http://localhost:3000` in the browser to interact with the web app.
+`$ git clone https://github.com/psiva/Campaign.git`
+`$ cd Campaign`
+`$ npm install `
+`$ cd client`
+`$ npm install`
+`$ cd .. `
+`$ ganache-cli`
+`$ truffle migrate --reset`
+`$ cd client`
+`$ npm run dev`
+
+1. Open up Ganache (desktop/command line) and configure it to hostname = 127.0.0.1 and port 8545 (default unless changed) to get your local blockchain up and running.
+2. Execute `cd ..` and then`truffle test` and other `truffle` commands from within the Campaign directory
+3. Update the MNEMONIC in the `.env` file with the mnemonic from the metamask. This is required if you wish to deploy the contract to Rinkeby testnet.
+4. Add the ganache accounts to Metamask by importing the private keys.
+5. Navigate to `http://localhost:3000` in the browser to interact with the web app.
 
 Use `truffle test` from the Campaign folder to execute the tests
+```sh
+Using network 'development'.
 
+  Contract: Campaign
+    ✓ deploys a factory and a campaign
+    ✓ marks caller as campaign owner (85ms)
+    ✓ allows people to contribute money and marks them as approvers (108ms)
+    ✓ requires a minimum contribution (65ms)
+    ✓ allows a owner to create a payment request (148ms)
+    ✓ process requests for payment (598ms)
+    ✓ returns campaign summary (170ms)
+
+
+  7 passing (2s)
+```
 The address in the metamask that is used for creating a campaign is the owner for that campaign. While running the tests accounts[0] is the owner.
 
 
