@@ -22,7 +22,7 @@ I used solidity v0.4.24. Please ensure your solc is v0.4.24
 
 ## Installation
 
-1. Clone the repo
+1. Clone the repo `git clone https://github.com/psiva/Campaign.git`
 2. `npm install` from the cloned folder to install dependencies for smart contracts
 3. `cd client`
 4. `npm install` to install the dependencies for web app
@@ -33,7 +33,7 @@ I used solidity v0.4.24. Please ensure your solc is v0.4.24
 9. `npm run dev` to run the server
 10. Navigate to `http://localhost:3000` in the browser to interact with the web app.
 
-Use `truffle test` from the Campaign folder to execute the tests \
+Use `truffle test` from the Campaign folder to execute the tests
 
 The address in the metamask that is used for creating a campaign is the owner for that campaign. While running the tests accounts[0] is the owner.
 
