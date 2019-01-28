@@ -143,7 +143,7 @@ contract Campaign is Pausable{
     /**
     @dev This method provides an ability to destroy and remove the contract from blockchain
      */
-    function kill() onlyOwner{
+    function kill() public onlyOwner{
         selfdestruct(owner);
     }
 }
