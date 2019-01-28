@@ -3,6 +3,7 @@ import getContract from '../lib/getContract';
 import {Card,Button} from 'semantic-ui-react';
 import Layout from '../components/layout'
 import {Link} from '../routes';
+import getWeb3 from '../lib/getWeb3';
 
 class CampaignIndex extends Component{
   
@@ -25,6 +26,9 @@ class CampaignIndex extends Component{
   render(){
     return (
     <Layout>
+      <div>
+        Current Account Address : {getWeb3.currentProvider.selectedAddress}
+      </div>
       <div>
         <h3>Open Campaigns</h3>
         <Link route="/campaigns/new">

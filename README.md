@@ -27,10 +27,11 @@ I used solidity v0.4.24. Please ensure your solc is v0.4.24
 3. `cd client`
 4. `npm install` to install the dependencies for web app
 5. Open up Ganache (desktop/command line) and configure it to hostname = 127.0.0.1 and port 8545 (default unless changed) to get your local blockchain up and running.
-6. Update the MNEMONIC in the `.env` file with the mnemonic from your local blockchain created by ganache
-7. Add the ganache accounts to Metamask by importing the private keys.
-8. `npm run dev` to run the server
-9. Navigate to `http://localhost:3000` in the browser to interact with the web app.
+6. Execute `cd ..` and then`truffle test` and other `truffle` commands from within the Campaign directory
+7. Update the MNEMONIC in the `.env` file with the mnemonic from the metamask. This is required if you wish to deploy the contract to Rinkeby testnet.
+8. Add the ganache accounts to Metamask by importing the private keys.
+9. `npm run dev` to run the server
+10. Navigate to `http://localhost:3000` in the browser to interact with the web app.
 
 Use `truffle test` from the Campaign folder to execute the tests \
 
