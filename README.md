@@ -21,17 +21,18 @@ If you have truffle 5.0, please use truffle v 4.1.14
 I used solidity v0.4.24. Please ensure your solc is v0.4.24
 
 ## Installation
-
-`$ git clone https://github.com/psiva/Campaign.git`
-`$ cd Campaign`
-`$ npm install `
-`$ cd client`
-`$ npm install`
-`$ cd .. `
-`$ ganache-cli`
-`$ truffle migrate --reset`
-`$ cd client`
-`$ npm run dev`
+```sh
+$ git clone https://github.com/psiva/Campaign.git
+$ cd Campaign
+$ npm install
+$ cd client
+$ npm install
+$ cd .. 
+$ ganache-cli
+$ truffle migrate --reset
+$ cd client
+$ npm run dev
+```
 
 1. Open up Ganache (desktop/command line) and configure it to hostname = 127.0.0.1 and port 8545 (default unless changed) to get your local blockchain up and running.
 2. Execute `cd ..` and then`truffle test` and other `truffle` commands from within the Campaign directory
