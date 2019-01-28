@@ -65,8 +65,11 @@ The address in the metamask that is used for creating a campaign is the owner fo
 `client` folder contains the front end code \
 `design_pattern_decisions.md` and ` avoiding_common_attacks.md` are in the root folder.
 
-To access the Contract on MyEtherWaller navigate to https://www.myetherwallet.com/#contracts \
+To access the Contract on MyEtherWaller navigate to https://www.myetherwallet.com/#contracts 
 
-Contract Address  : `0x282845238991eb6515265A4Ec71b1dB40bBFd589` \
+Contract Address  : `0x282845238991eb6515265A4Ec71b1dB40bBFd589` 
 
-ABI : [{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"campaigns","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"minimumContribution","type":"uint256"},{"name":"imgHash","type":"string"}],"name":"createCampaign","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getDeployedCampaigns","outputs":[{"name":"","type":"address[]"}],"payable":false,"stateMutability":"view","type":"function"}]
+ABI :
+``` sh
+[{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"campaigns","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"minimumContribution","type":"uint256"},{"name":"imgHash","type":"string"}],"name":"createCampaign","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getDeployedCampaigns","outputs":[{"name":"","type":"address[]"}],"payable":false,"stateMutability":"view","type":"function"}]
+```
