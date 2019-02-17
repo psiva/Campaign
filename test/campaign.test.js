@@ -15,7 +15,7 @@ contract("Campaign", function(accounts){
 
     beforeEach(async () =>{
         factory = await CampaignFactory.deployed();
-        await factory.createCampaign('100',{from:accounts[0]},'');
+        await factory.createCampaign('100',{from:accounts[0]},'','');
         [campaignAddress] = await factory.getDeployedCampaigns({from:accounts[0]});
         campaign = Campaign.at(campaignAddress);
     })
@@ -89,6 +89,7 @@ contract("Campaign", function(accounts){
      */
     it('returns campaign summary', async()=>{    
         const summary = await campaign.getSummary();
+        console.log({summary});
         let balance = await web3.eth.getBalance(accounts[9]);
         balance = web3.fromWei(balance,'ether');
         balance = parseFloat(balance);

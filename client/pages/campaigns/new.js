@@ -8,6 +8,7 @@ import IPFS from '../../lib/ipfs';
 class CampaignNew extends Component {
   state = {
     minimumContribution: '',
+    campaignName:'',
     errorMessage :'',
     loading:false,
     buffer:''
@@ -19,14 +20,23 @@ class CampaignNew extends Component {
      try{
         const fileAdded = await IPFS.files.add(this.state.buffer);
         const accounts = await getWeb3.eth.getAccounts();
-        await getContract.methods
-               .createCampaign(this.state.minimumContribution,fileAdded[0].hash)
+        console.log('sending transaction')
+        try{
+          console.log(getContract());
+            await getContract().methods
+               .createCampaign(this.state.minimumContribution,fileAdded[0].hash, this.state.campaignName)
                .send({from:accounts[0]});
+        }catch(error){
+          console.log(error.message);
+        }
+      
+        console.log('transaciton sent')
+        this.setState({loading:false});
         Router.pushRoute('/');
      } catch(err){
+        this.setState({loading:false});
         this.setState({errorMessage:err.message});
      }
-     this.setState({loading:false});
    }
 
    captureFile = (event)=>{
@@ -43,6 +53,15 @@ class CampaignNew extends Component {
       <Layout>
         <h3> Create new Campaign</h3>
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
+        <Form.Field>
+            <label>Name of the Campaign</label>
+            <Input
+              value={this.state.campaignName}
+              onChange={event =>
+                this.setState({ campaignName: event.target.value })
+              }
+            />
+          </Form.Field>
           <Form.Field>
             <label>Minimum Contribution</label>
             <Input

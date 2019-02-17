@@ -1,3 +1,4 @@
+require('dotenv').config();
 module.exports = {
   webpack: (config, { buildId, dev }) => {
     // This allows the app to refer to files through our symlink

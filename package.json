@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "dependencies": {
         "dotenv": "^6.2.0",
+        "fs": "0.0.1-security",
         "openzeppelin-solidity": "^2.0.0",
         "truffle-hdwallet-provider": "0.0.6"
     },

@@ -37,8 +37,11 @@ $ npm run dev
 1. Open up Ganache (desktop/command line) and configure it to hostname = 127.0.0.1 and port 8545 (default unless changed) to get your local blockchain up and running.
 2. Execute `cd ..` and then`truffle test` and other `truffle` commands from within the Campaign directory
 3. Update the MNEMONIC in the `.env` file with the mnemonic from the metamask. This is required if you wish to deploy the contract to Rinkeby testnet.
-4. Add the ganache accounts to Metamask by importing the private keys.
+4. Ensure you select Rinkeby testnet in the Metamask
 5. Navigate to `http://localhost:3000` in the browser to interact with the web app.
+6. Use Rinkeby accounts to interact with the app
+
+If you would like to use Ganache, update the contract address in `/Campaign/client/lib/getContract.js` with the contract address in the ganache and use ganache in the metamask.
 
 Use `truffle test` from the Campaign folder to execute the tests
 ```sh

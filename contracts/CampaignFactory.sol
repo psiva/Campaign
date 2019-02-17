@@ -10,8 +10,8 @@ contract CampaignFactory{
     @param minimumContribution Minimum Contribution required for this campaign
     @param imgHash IPFS hash of the banner image
      */
-    function createCampaign(uint minimumContribution,string imgHash) public {
-        address newCampaign = new Campaign(minimumContribution,msg.sender,imgHash);
+    function createCampaign(uint minimumContribution,string imgHash, string campaignName) public {
+        address newCampaign = new Campaign(minimumContribution,msg.sender,imgHash, campaignName);
         campaigns.push(newCampaign);
     }
     /**

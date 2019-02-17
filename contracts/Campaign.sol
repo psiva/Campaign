@@ -2,6 +2,7 @@ pragma solidity 0.4.24;
 
 import "openzeppelin-solidity/contracts/lifecycle/Pausable.sol";
 import "openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "./ILighthouse.sol";
 
 /**
 @title Contract to implement functionality related to management of a campaign. 
@@ -11,6 +12,8 @@ import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 contract Campaign is Pausable{
 
     using SafeMath for uint;
+
+    ILighthouse  public myLighthouse;
     
     struct Request{
         string description;
@@ -23,8 +26,11 @@ contract Campaign is Pausable{
     
     address public owner;
     string private imageHash;
+    string private campaignName;
     uint private minimumContribution;
     uint public approversCount;
+    uint private USDValue;
+    bool private ok;
     mapping(address=>bool) public approvers;
     Request[] public requests;
     
@@ -45,10 +51,12 @@ contract Campaign is Pausable{
     @param creator Owner of the Campaign
     @param imgHash IPFS hash of the banner image
      */
-    constructor(uint minimumAmount, address creator, string imgHash) public {
+    constructor(uint minimumAmount, address creator, string imgHash, string _campaignName,ILighthouse _myLighthouse) public {
         owner = creator;
         minimumContribution = minimumAmount;
         imageHash = imgHash;
+        campaignName = _campaignName;
+        myLighthouse = _myLighthouse;
     }
     
     /**
@@ -120,6 +128,7 @@ contract Campaign is Pausable{
     @return Minimum Contribution, Balance, Number of requests, Number of approvers and Owner's address
      */
     function getSummary() public view returns(uint,uint,uint,uint,address,string) {
+        (USDValue,ok)=myLighthouse.peekData();
         return(
             minimumContribution,
             address(this).balance,
