@@ -59,8 +59,8 @@ class CampaignDetails extends Component{
                 style:{overflowWrap:'break-word'}
             },
             {
-                header: web3.utils.fromWei(balance),
-                meta: 'Campaign Balance(Ether)',
+                header: web3.utils.fromWei(balance)/1e18,
+                meta: 'Campaign Balance(USD)',
                 description: 'Balance is how much money this campaign has left to spend',
                 style:{overflowWrap:'break-word'}
             }

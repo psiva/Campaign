@@ -14,9 +14,9 @@ function getContractInstance() {
   } else {
     const contract = new web3.eth.Contract(
       CampaignFactory.abi,
-      "0x4c617bd079aa83f5aafa27ad0cf6b7c4f0797533"
+      "0x2d79994914b4aa0953db07923834c02caa015745"
     );
-    console.log(contract);
+    //console.log(contract);
     contractInstance = getAssist().Contract(contract);
 
     return contractInstance;

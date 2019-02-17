@@ -1,17 +1,27 @@
 pragma solidity 0.4.24;
 
 import './Campaign.sol';
-
+import "./ILighthouse.sol";
 contract CampaignFactory{
+
+    ILighthouse  public myLighthouse;
     
     address[] public campaigns;
+    uint private USDValue;
+    bool private ok;
+
+    
+    constructor (ILighthouse _myLighthouse) public{
+         myLighthouse = _myLighthouse;
+    }
     /**
     @notice This function helps to create campaigns and adds to a array
     @param minimumContribution Minimum Contribution required for this campaign
     @param imgHash IPFS hash of the banner image
      */
     function createCampaign(uint minimumContribution,string imgHash, string campaignName) public {
-        address newCampaign = new Campaign(minimumContribution,msg.sender,imgHash, campaignName);
+        (USDValue,ok)=myLighthouse.peekData();
+        address newCampaign = new Campaign(minimumContribution,msg.sender,imgHash, campaignName,USDValue);
         campaigns.push(newCampaign);
     }
     /**
